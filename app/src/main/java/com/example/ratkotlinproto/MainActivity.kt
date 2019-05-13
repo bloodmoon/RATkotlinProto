@@ -1,8 +1,10 @@
 package com.example.ratkotlinproto
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -17,4 +19,28 @@ class MainActivity : AppCompatActivity() {
         val myToast = Toast.makeText(this, "Hello Toast!", Toast.LENGTH_SHORT)
         myToast.show()
     }
+
+    fun countMe (view: View){
+        //Get the txt view
+        val showCountTextView = findViewById<TextView>(R.id.textView)
+
+        //Get the value of the txt view
+        val countString = showCountTextView.text.toString()
+
+        //Convert to an int and increment
+        var count: Int = Integer.parseInt(countString)
+        count++
+
+        showCountTextView.text = count.toString()
+    }fun randomMe(view: View){
+
+        //Create an Intent for 2nd activity start
+        val randomIntent = Intent(this, SecondActivity::class.java)
+
+        //Start the activity
+        startActivity(randomIntent)
+
+    }
+
+
 }
