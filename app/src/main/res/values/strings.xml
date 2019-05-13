@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RATkotlinProto</string>
+    <string name="testing_text">RA Droid</string>
+    <string name="zero">0</string>
+    <string name="left">Toast</string>
+    <string name="mid">Count</string>
+    <string name="right">Random</string>
+</resources>
