@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,9 +38,17 @@ class MainActivity : AppCompatActivity() {
         //Create an Intent for 2nd activity start
         val randomIntent = Intent(this, SecondActivity::class.java)
 
+        //Get current value of the txt view
+        val countString = textView.text.toString()
+
+        // Convert the count to an int
+        val count = Integer.parseInt(countString)
+
+        //Add the count to the extras for the Intent
+        randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
+
         //Start the activity
         startActivity(randomIntent)
-
     }
 
 
